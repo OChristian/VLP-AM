@@ -24,9 +24,9 @@ del:
 #	microk8s kubectl patch clickhouseinstallation ssp-ssp-ch -n ssp -p '{"metadata":{"finalizers":[]}}' --type=merge
 #	microk8s kubectl patch clickhousekeeperinstallations ssp-ssp-chk -n ssp   -p '{"metadata":{"finalizers":[]}}' --type=merge
 
-nginx:
-#	helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-	helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx -n ingress-nginx
+envoy:
+	helm upgrade --install eg oci://docker.io/envoyproxy/gateway-helm \
+		--version v0.0.0-latest -n envoy-gateway-system --create-namespace
 
 infra:
 	helm install "infra-${RELEASENAME}" "${HELM_REPO}/ssp-infra" -n "${NAMESPACE}" \
