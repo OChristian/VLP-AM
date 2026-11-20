@@ -1,0 +1,16 @@
+Caracter Keyboard
+
+! : =
+= : -
+- : 6 
+_ : 8
+< : @
+> : shift @
+# : alt 3
+@ : alt 0
+~ : alt 2
+* : `
+` : alt 7
+| : alt 6
++ : shift -
+\ : alt 8
